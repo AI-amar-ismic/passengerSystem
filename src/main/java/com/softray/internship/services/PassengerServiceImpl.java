@@ -116,5 +116,41 @@ public class PassengerServiceImpl implements PassengerService {
         return null;
     }
 
+    /*
+        Method takes Long id and passengerDto as parameters. First it calls the findById method in passenger repository,
+        which returns a PassengerEntity object wrapped in and Optional object. If the optional object is not empty, then
+        the method continues by calling the updateMe method of the passenger entity, which updates the info without changing the
+        either database id or passport id. The updated passenger is then saved in the database under the same database id and returned in
+        form of a PassengerDto object. In case Optional object is empty, the method will return null, which will be handled by the controller.
+     */
+    @Override
+    public PassengerDto updatePassengerByID(Long id, PassengerDto passengerDto) {
+        Optional<PassengerEntity> optional = passengerRepo.findById(id);
+        if (optional.isPresent()){
+            PassengerEntity passengerEntity = optional.get();
+            passengerEntity.updateMe(passengerMapper.toEntity(passengerDto));
+            passengerEntity = passengerRepo.save(passengerEntity);
+            return passengerMapper.toDto(passengerEntity);
+        }
+        return null;
+    }
 
+    /*
+        Method takes int id and passengerDto as parameters. First it calls the getFirstByPassportID method in passenger repository,
+        which returns a PassengerEntity object wrapped in and Optional object. If the optional object is not empty, then
+        the method continues by calling the updateMe method of the passenger entity, which updates the info without changing the
+        either database id or passport id. The updated passenger is then saved in the database under the same database id and returned in
+        form of a PassengerDto object. In case Optional object is empty, the method will return null, which will be handled by the controller.
+     */
+    @Override
+    public PassengerDto updatePassengerByPassportID(int id, PassengerDto passengerDto) {
+        Optional<PassengerEntity> optional = passengerRepo.getFirstByPassportID(id);
+        if (optional.isPresent()){
+            PassengerEntity passengerEntity = optional.get();
+            passengerEntity.updateMe(passengerMapper.toEntity(passengerDto));
+            passengerEntity = passengerRepo.save(passengerEntity);
+            return passengerMapper.toDto(passengerEntity);
+        }
+        return null;
+    }
 }

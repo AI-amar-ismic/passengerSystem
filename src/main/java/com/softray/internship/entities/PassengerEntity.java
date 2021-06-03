@@ -47,4 +47,19 @@ public class PassengerEntity {
         return id;
     }
 
+    /*
+        A method for the instance PassengerEntity to update itself.
+        Used in the update endpoints in order to update the entity without updating its database id or passport id
+     */
+    public void updateMe (PassengerEntity newPassenger){
+        if (!this.firstName.equals(newPassenger.firstName)){
+            this.firstName= newPassenger.firstName;
+        }
+        if (!this.lastName.equals(newPassenger.lastName)){
+            this.lastName= newPassenger.lastName;
+        }
+        if (!this.email.equals(newPassenger.email)){
+            this.email= newPassenger.email;
+        }
+    }
 }

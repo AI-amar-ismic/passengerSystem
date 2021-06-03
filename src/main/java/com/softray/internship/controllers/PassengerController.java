@@ -116,4 +116,35 @@ public class PassengerController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    /*
+        An endpoint to update a single passenger from the database given his database id
+        Pre-condition: The service didn't return a null object when an appropriate method in the service was called
+        @Param long id representing the database id and passenger in form of a PassengerDto object containing the updated info
+        @Returns A HTTP response 200 OK, with the updated passenger in the response body
+     */
+    @PutMapping("id/{id}")
+    public ResponseEntity<PassengerDto> updatePassengerByID (@PathVariable Long id, @RequestBody PassengerDto passenger){
+        PassengerDto updatedPassenger = passengerService.updatePassengerByID(id,passenger);
+        if (updatedPassenger != null) {
+            return new ResponseEntity<>(updatedPassenger,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    /*
+        An endpoint to update a single passenger from the database given his passport id
+        Pre-condition: The service didn't return a null object when an appropriate method in the service was called
+        @Param int id representing the passport id and passenger in form of a PassengerDto object containing the updated info
+        @Returns A HTTP response 200 OK, with the updated passenger in the response body
+     */
+    @PutMapping("passport/{passportID}")
+    public ResponseEntity<PassengerDto> updatePassengerByPassportID (@PathVariable int passportID, @RequestBody PassengerDto passengerDto){
+        PassengerDto updatedPassenger = passengerService.updatePassengerByPassportID(passportID,passengerDto);
+        if (updatedPassenger!=null){
+            return new ResponseEntity<>(updatedPassenger,HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+    }
 }

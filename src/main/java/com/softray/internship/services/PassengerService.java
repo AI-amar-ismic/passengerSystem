@@ -53,4 +53,18 @@ public interface PassengerService {
        @Returns the deleted passenger in a form of a PassengerDto object
     */
     public PassengerDto deletePassengerByPassportID (int id);
+
+    /*
+        A method to update a passenger in the database given his database id
+        @Param long id representing the database id and passengerDto containing the updated info
+        @Returns the updated passenger in form of a PassengerDto object
+     */
+    public PassengerDto updatePassengerByID (Long id, PassengerDto passengerDto);
+
+    /*
+        A method to update a passenger in the database given his passport id
+        @Param int id representing the passport id and passengerDto containing the updated info
+        @Returns the updated passenger in form of a PassengerDto object
+     */
+    public PassengerDto updatePassengerByPassportID (int id, PassengerDto passengerDto);
 }

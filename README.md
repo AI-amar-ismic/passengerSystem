@@ -20,3 +20,12 @@ Receives updated data in JSON format in the request body, updates a single passe
 Deletes a single passenger from the database given his database id
 ### DELETE on /passengers/passport/{passportID}
 Deletes a single passenger from the database given his passport id
+
+Included in the repository is a Postman collection of all the endpoints, for ease of use.
+
+## Database
+Database used for this project was a PostgreSQL database run locally using Docker containers. Hibernate ddl is set to update, so no additional database setup is needed, apart from changing the database url, username and password, which will be set locally. 
+
+
+
+

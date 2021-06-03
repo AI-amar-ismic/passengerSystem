@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "0a4997d4-59ae-460f-8294-01d035744a05",
+		"name": "PassengerSystemAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new passenger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Amar\",\n    \"lastName\" : \"Ismic\",\n    \"passportID\" : 1234,\n    \"email\" : \"amarismic@icloud.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passengers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all passengers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passengers/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get passenger by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passengers/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get passenger by passport id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passengers/passport/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"passport",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete passenger by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passengers/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete passenger by passport id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passengers/passport/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"passport",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update passenger by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Nusret\",\n    \"lastName\" : \"Imamovic\",\n    \"passportID\" : 3333,\n    \"email\" : \"amarismic@icloud.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passengers/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update passenger by passport id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\" : \"Haris\",\n    \"lastName\" : \"Imamovic\",\n    \"passportID\" : 3333,\n    \"email\" : \"amarismic@icloud.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passengers/passport/3333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passengers",
+						"passport",
+						"3333"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
